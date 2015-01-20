@@ -1,0 +1,35 @@
+diff -up gnash-0.8.10/gui/Makefile.in.orig gnash-0.8.10/gui/Makefile.in
+--- gnash-0.8.10/gui/Makefile.in.orig	2012-01-19 14:49:49.000000000 -0500
++++ gnash-0.8.10/gui/Makefile.in	2015-01-19 10:24:42.411138772 -0500
+@@ -1162,7 +1162,7 @@ LIBAVCODEC_IDENT = @LIBAVCODEC_IDENT@
+ LIBICONV = @LIBICONV@
+ LIBINTL = @LIBINTL@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lboost_system
+ LIBTOOL = @LIBTOOL@
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ LIBVA_CFLAGS = @LIBVA_CFLAGS@
+diff -up gnash-0.8.10/plugin/klash4/klash_part.cpp.orig gnash-0.8.10/plugin/klash4/klash_part.cpp
+--- gnash-0.8.10/plugin/klash4/klash_part.cpp.orig	2012-01-19 14:17:50.000000000 -0500
++++ gnash-0.8.10/plugin/klash4/klash_part.cpp	2015-01-19 10:24:42.415138800 -0500
+@@ -43,6 +43,7 @@
+ #include "klash_part.h"
+ 
+ #include <csignal>
++#include <unistd.h>
+ 
+ //-----------------------------------------------------------------------------
+ 
+diff -up gnash-0.8.10/utilities/Makefile.in.orig gnash-0.8.10/utilities/Makefile.in
+--- gnash-0.8.10/utilities/Makefile.in.orig	2012-01-19 14:49:58.000000000 -0500
++++ gnash-0.8.10/utilities/Makefile.in	2015-01-19 10:24:42.411138772 -0500
+@@ -373,7 +373,7 @@ LIBAVCODEC_IDENT = @LIBAVCODEC_IDENT@
+ LIBICONV = @LIBICONV@
+ LIBINTL = @LIBINTL@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lboost_system
+ LIBTOOL = @LIBTOOL@
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ LIBVA_CFLAGS = @LIBVA_CFLAGS@
